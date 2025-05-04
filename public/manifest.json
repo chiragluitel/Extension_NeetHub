@@ -1,0 +1,40 @@
+{
+    "manifest_version":3,
+    "name":"NeetHub",
+    "version": "1.0.0",
+    "description": "Automatically push NeetCode solutions to GitHub",
+    "icons": {
+        "16": "icons/icon16.png", 
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "permissions":["identity", "storage", "scripting"],
+    "host_permissions": [ 
+    "https://neetcode.io/*",
+    "https://api.github.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+        "matches": ["https://neetcode.io/problems/*"],
+        "js": ["content.js"], 
+        "css": []
+        }
+    ],
+    "action": {
+        "default_icon": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png"
+        },
+        "default_title": "NeetHub",
+        "default_popup": "src/popup/popup.html"
+    },
+    "oauth2": {
+        "client_id": "Ov23lizY2icCrX54LSLg",
+        "scopes": [
+          "repo"
+        ]
+      }
+}
