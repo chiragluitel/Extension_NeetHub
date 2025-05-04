@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // Use modern JavaScript features
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "react-jsx", // Use new JSX transform
+    "strict": true, // Enable strict type checking
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist", // Where compiled JS will go (Vite might override this)
+    "rootDir": "./src", // Where your source TS/TSX files are
+    "noEmit": true // Vite handles emission, TS only does type checking
+  },
+  "include": ["src/**/*"], // Which files TS should check
+  "exclude": ["node_modules", "dist"]
+}
